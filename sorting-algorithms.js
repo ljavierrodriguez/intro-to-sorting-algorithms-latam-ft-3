@@ -16,6 +16,12 @@ let numeros = [1000, 45, 32, 12, 1, 900, 456, 230, 24, 560, 349, 5]
 // [32, 12, 45, 1, 900, 456, 230, 24, 560, 349, 5, 1000]
 // [32, 12, 1, 45, 900, 456, 230, 24, 560, 349, 5, 1000]
 
+let notas = [
+    { id: 1, nota: 10 },
+    { id: 2, nota: 9 },
+    { id: 3, nota: 12 },
+    { id: 4, nota: 18 },
+]
 
 function bubbleSort(arr = []) {
     const len = arr.length
@@ -23,6 +29,22 @@ function bubbleSort(arr = []) {
     for (let i = 0; i < len - 1; i++) {
         for (let j = 0; j < len - 1; j++) {
             if (arr[j] > arr[j + 1]) {
+                const temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+
+    return arr
+}
+
+function bubbleSortObjects(arr = []) {
+    const len = arr.length
+
+    for (let i = 0; i < len - 1; i++) {
+        for (let j = 0; j < len - 1; j++) {
+            if (arr[j].attribute > arr[j + 1].attribute) {
                 const temp = arr[j]
                 arr[j] = arr[j + 1]
                 arr[j + 1] = temp
